@@ -66,11 +66,19 @@ class Savingsaccount(var accountNumber:String, var accountName:String, var balan
 //statement to assign each product to a list based on its category
 
 data class Product (var name:String, var weight:Double, var price:Int, var category:String)
-fun organize(stuff:Product) {
-    var store = mutableListOf<String>()
-    when {
-        stuff.category == "Other" -> store.add("Other")
+fun add (product:Product): List<String> {
+    var grocery = mutableListOf<String>()
+    var hygiene = mutableListOf<String>()
+    var other = mutableListOf<String>()
+    when (product.category){
+        "glocery" -> println(grocery.add(product.name))
+        "hygiene" -> println(hygiene.add(product.name))
+        "other" -> println(other.add(product.name))
+
     }
+    return grocery
+    return hygiene
+    return other
 }
 
 
